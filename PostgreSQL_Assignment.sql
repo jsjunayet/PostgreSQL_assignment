@@ -55,10 +55,20 @@ SELECT * FROM books
 WHERE price= (SELECT MAX(price) FROM books);
 
 --3️⃣ Find the total number of orders placed by each customer.
+SELECT * FROM orders;
+SELECT customers.name, count(orders.id) as total_orders FROM customers
+INNER JOIN orders ON customers.id = orders.customer_id
+GROUP BY customers.name;
 
 --4️⃣ Calculate the total revenue generated from book sales.
+SELECT SUM(books.price * orders.quantity) AS total_revenue FROM orders
+INNER JOIN books ON orders.book_id=books.id;
 --5️⃣ List all customers who have placed more than one order.
+SELECT * FROM customers;
+ 
+SELECT * FROM orders;
 --6️⃣ Find the average price of books in the store.
+SELECT AVG(price) as Avarage_price FROM books
 --7️⃣ Increase the price of all books published before 2000 by 10%.
 --8️⃣ Delete customers who haven't placed any orders.
 
