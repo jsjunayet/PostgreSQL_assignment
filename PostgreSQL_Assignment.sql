@@ -90,7 +90,6 @@ HAVING COUNT(o.id) > 1;
 --6️⃣ Find the average price of books in the store.
 SELECT AVG(price) AS average_book_price FROM books;
 --AVG(price)  Calculates the average price of all books in the books table.
-
 --7️⃣ Increase the price of all books published before 2000 by 10%.
 UPDATE books
 SET price = price * 1.10
