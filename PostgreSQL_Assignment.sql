@@ -38,7 +38,6 @@ CREATE TABLE orders(
     quantity INT CHECK(quantity>0),
     order_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
-
 --Value Insert in the orders table command
 INSERT INTO orders (id, customer_id, book_id, quantity, order_date) VALUES
 (1, 1, 2, 1, '2024-03-10'),
